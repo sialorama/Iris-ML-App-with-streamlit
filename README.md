@@ -24,13 +24,7 @@ streamlit run app.py
 
 #### Visit the app on Heroku
 
-[link]('https://st-iris-web-app.herokuapp.com/')
-
-
-
-#### By
-+ Jesse E.Agbe(JCharis)
-+ Jesus Saves@JCharisTech
+https://st-iris-web-app.herokuapp.com/
 
 #### More Thanks to The Streamlit Team
 + Awesome Tool
