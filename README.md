@@ -22,21 +22,9 @@ pip install streamlit
 streamlit run app.py
 ```
 
-#### Intro
-![](screenshots/home1.png)
+#### Visit the app on Heroku
 
-#### Show DataFrame/Columns
-![](screenshots/home2.png)
-
-#### Show and Hide Image
-![](screenshots/home3.png)
-
-#### With Description of App
-![](screenshots/iris_eda_desc.png)
-
-##### NB About Changes
-+ app.py :from tutorial video
-+ iris_app.py :restructured
+[link]('https://st-iris-web-app.herokuapp.com/')
 
 
 
