@@ -10,11 +10,14 @@
 
 ##### To Install Requirements
 ```bash
-pip install -r requirements.txt
+  $ pip install -r requirements.txt
 ```
 
 #### Running the App
-+ cd into app
+
++ clone the repo :
+  $ git clone https://github.com/sialorama/iris_heroku_web_app.git
++ cd into cloned folder
 + run the following
 
 ```bash
