@@ -15,7 +15,7 @@
 
 #### Running the App
 
-+ clone the repo :
++ clone the repo :  
   $ git clone https://github.com/sialorama/iris_heroku_web_app.git
 + cd into cloned folder
 + run the following
