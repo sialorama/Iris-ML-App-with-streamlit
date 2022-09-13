@@ -1,4 +1,4 @@
-### Iris EDA Web App
+### Iris EDA Web App using Streamlit
 
 + Iris Exploratory Data Analysis App built with Streamlit
 
