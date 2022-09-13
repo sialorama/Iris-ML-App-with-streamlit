@@ -8,11 +8,10 @@
 #### Purpose
 + Show a simple EDA of Iris using Streamlit framework 
 
-##### To Install Streamlit
+##### To Install Requirements
 ```bash
-pip install streamlit
+pip install -r requirements.txt
 ```
-
 
 #### Running the App
 + cd into app
