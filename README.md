@@ -21,7 +21,8 @@
 + Accéder au dossier clonné:
 
 ```bash
-  $ cd iris-streamlit-web-app```
+  cd iris-streamlit-web-app
+```
 
 + Exécuter la commande suivante:
 
