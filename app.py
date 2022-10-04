@@ -7,9 +7,9 @@ import seaborn as sns
 from PIL import Image,ImageFilter,ImageEnhance
 
 
-# Title and Subheader
-st.title("Iris EDA App")
-st.subheader("EDA Web App with Streamlit ")
+# Titres
+st.title("Iris")
+st.subheader("Analyse exploratoire de données (EDA)")
 
 
 # EDA
@@ -22,8 +22,8 @@ def explore_data(dataset):
 	return df 
 
 
-# Show Dataset
-if st.checkbox("Preview DataFrame"):
+# Visualiser les parties du Dataset
+if st.checkbox("Visualiser les extrémités du DataFrame"):
 	data = explore_data(my_dataset)
 	if st.button("Head"):
 		st.write(data.head())
@@ -32,35 +32,35 @@ if st.checkbox("Preview DataFrame"):
 	else:
 		st.write(data.head(2))
 
-# Show Entire Dataframe
-if st.checkbox("Show All DataFrame"):
+# Afficher le Dataset
+if st.checkbox("Afficher tout le DataFrame"):
 	data = explore_data(my_dataset)
 	st.dataframe(data)
 
-# Show Description
-if st.checkbox("Show All Column Name"):
+# Description du Dataset
+if st.checkbox("Afficher le nom des colonnes"):
 	data = explore_data(my_dataset)
-	st.text("Columns:")
+	st.text("Colonnes:")
 	st.write(data.columns)
 
-# Dimensions
-data_dim = st.radio('What Dimension Do You Want to Show',('Rows','Columns'))
-if data_dim == 'Rows':
+# Dimensions du Dataset
+data_dim = st.radio('Afficher le nombre de lignes et de colonnes',('Lignes','Colonnes'))
+if data_dim == 'Lignes':
 	data = explore_data(my_dataset)
-	st.text("Showing Length of Rows")
+	st.text("Nombre de lignes")
 	st.write(len(data))
-if data_dim == 'Columns':
+if data_dim == 'Colonnes':
 	data = explore_data(my_dataset)
-	st.text("Showing Length of Columns")
+	st.text("Nombre de colonnes")
 	st.write(data.shape[1])
 
 
-if st.checkbox("Show Summary of Dataset"):
+if st.checkbox("Résumé du Dataset"):
 	data = explore_data(my_dataset)
 	st.write(data.describe())
 
-# Selection
-species_option = st.selectbox('Select Columns',('sepal_length','sepal_width','petal_length','petal_width','species'))
+# Selection des espèces
+species_option = st.selectbox('Selection des colonnes',('sepal_length','sepal_width','petal_length','petal_width','species'))
 data = explore_data(my_dataset)
 if species_option == 'sepal_length':
 	st.write(data['sepal_length'])
@@ -73,74 +73,63 @@ elif species_option == 'petal_width':
 elif species_option == 'species':
 	st.write(data['species'])
 else:
-	st.write("Select A Column")
+	st.write("Selectionnez une colonne")
 
-# Show Plots
-if st.checkbox("Simple Bar Plot with Matplotlib "):
+# Affichage des graphiques
+if st.checkbox("Diagramme Bar Plot avec Matplotlib "):
 	data = explore_data(my_dataset)
 	data.plot(kind='bar')
 	st.pyplot()
+	st.set_option('deprecation.showPyplotGlobalUse', False)
 
 
-# Show Plots
-if st.checkbox("Simple Correlation Plot with Matplotlib "):
+# Affichage des graphiques
+if st.checkbox("Graphique de corrélation (Matplotlib) "):
 	data = explore_data(my_dataset)
 	plt.matshow(data.corr())
 	st.pyplot()
 
-# Show Plots
-if st.checkbox("Simple Correlation Plot with Seaborn "):
+# Affichage des graphiques
+if st.checkbox("Graphique de correlation (Seaborn) "):
 	data = explore_data(my_dataset)
 	st.write(sns.heatmap(data.corr(),annot=True))
 	# Use Matplotlib to render seaborn
 	st.pyplot()
 
-# Show Plots
-if st.checkbox("Bar Plot of Groups or Counts"):
-	data = explore_data(my_dataset)
-	v_counts = data.groupby('species')
-	st.bar_chart(v_counts)
-
-
-# Iris Image Manipulation
+# Traitement des images d'Iris
 @st.cache
 def load_image(img):
 	im =Image.open(os.path.join(img))
 	return im
 
-# Image Type
-species_type = st.radio('What is the Iris Species do you want to see?',('Setosa','Versicolor','Virginica'))
+# Images des différentes espèces
+species_type = st.radio("Choisissez l'espèce d'Iris à afficher?",('Setosa','Versicolor','Virginica'))
 
 if species_type == 'Setosa':
-	st.text("Showing Setosa Species")
+	st.text("Affichage de l'espèce Setosa")
 	st.image(load_image('imgs/iris_setosa.jpg'))
 elif species_type == 'Versicolor':
-	st.text("Showing Versicolor Species")
+	st.text("Affichage de l'espèce Versicolor")
 	st.image(load_image('imgs/iris_versicolor.jpg'))
 elif species_type == 'Virginica':
-	st.text("Showing Virginica Species")
+	st.text("Affichage de l'espèce Virginica")
 	st.image(load_image('imgs/iris_virginica.jpg'))
 
 
-
-# Show Image
-if st.checkbox("Show Image/Hide Image"):
-	my_image = load_image('iris_setosa.jpg')
+# Afficher l'image
+if st.checkbox("Afficher / Cacher l'image"):
+	my_image = load_image('./imgs/iris_setosa.jpg')
 	enh = ImageEnhance.Contrast(my_image)
-	num = st.slider("Set Your Contrast Number",1.0,3.0)
-	img_width = st.slider("Set Image Width",300,500)
+	num = st.slider("Ajuster le contraste",1.0,3.0)
+	img_width = st.slider("Ajuster la taille de l'image",300,500)
 	st.image(enh.enhance(num),width=img_width)
 
 
-# About
+# A propos
 
-if st.button("About App"):
-	st.subheader("Iris Dataset EDA App")
-	st.text("Built with Streamlit")
-	st.text("Thanks to the Streamlit Team Amazing Work")
-
-if st.checkbox("By"):
-	st.text("Jesse E.Agbe(JCharis)")
-	st.text("Jesus Saves@JCharisTech")
+if st.button("A propos"):
+	st.subheader("Analyse exploratoire des données d'Iris")
+	st.text("Réalisée avec Streamlit")
+	st.text("J@m sialorama-at-gmail-dot-com")
 	
 	
