@@ -9,7 +9,7 @@ from PIL import Image,ImageFilter,ImageEnhance
 
 # Titres
 st.title("Iris")
-st.subheader("Analyse exploratoire de données (EDA)")
+st.subheader("Analyse exploratoire des données (EDA)")
 
 
 # EDA

@@ -1,32 +1,24 @@
-### Iris EDA Web App using Streamlit
+## Application d'analyse exploratoire des données d'Iris
 
-+ Iris Exploratory Data Analysis App built with Streamlit
+#### Objectif
++ Afficher une analyse exploratoire des données des données Iris en utilisant le framework Streamlit.   
 
-#### Description
-+ This is a simple Exploratory Data Analysis of the Iris Dataset depicting the various species built with streamlit
-
-#### Purpose
-+ Show a simple EDA of Iris using Streamlit framework 
-
-##### To Install Requirements
+### Installer les dépendances
 ```bash
   $ pip install -r requirements.txt
 ```
 
-#### Running the App
-
-+ clone the repo :  
-  $ git clone https://github.com/sialorama/iris_heroku_web_app.git
-+ cd into cloned folder
-+ run the following
-
+### Lancer l'application en local dans le terminal
++ clonner le dépôt Git:  
+  ```bash
+  $ git clone https://github.com/sialorama/iris-streamlit-web-app.git```
++ Accéder au dossier clonné:
++ ```bash
+  $ cd iris-streamlit-web-app```
++ Exécuter la commande suivante:
 ```bash
-streamlit run app.py
+  streamlit run app.py
 ```
 
-#### Visit the app on Heroku
-
-https://st-iris-web-app.herokuapp.com/
-
-#### More Thanks to The Streamlit Team
-+ Awesome Tool
+#### Accéder à l'application sur Heroku
+```https://iris--streamlit-app.herokuapp.com/```
