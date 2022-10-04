@@ -7,14 +7,15 @@
 ## Installer les dépendances
 
 ```bash
-  $ pip install -r requirements.txt```
+  pip install -r requirements.txt
+```
 
 ## Lancer l'application en local dans le terminal
 
 + clonner le dépôt Git:
 
 ```bash
-  $ git clone https://github.com/sialorama/iris-streamlit-web-app.git
+  git clone https://github.com/sialorama/iris-streamlit-web-app.git
 ```
 
 + Accéder au dossier clonné:
