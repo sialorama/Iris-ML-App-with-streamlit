@@ -31,4 +31,4 @@
 ```
 
 ## Accéder à l'application sur Heroku
-[link](https://iris--streamlit-app.herokuapp.com/)
+[Analyse exploratoire des données d'Iris](https://iris--streamlit-app.herokuapp.com/)
